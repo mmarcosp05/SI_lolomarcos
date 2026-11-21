@@ -1,0 +1,10 @@
+script1.ps1 Pide nombre de usuario y crea dicho usuario sin contraseña
+
+$nombre=Read-Host "Dime un nombre para el nuevo usuario"
+New-LocalUser $nombre -NoPassword
+
+script2.ps1 Pide nombre de usuario y crea dicho usuario con contraseña
+
+$nombre=Read-Host "Dime un nombre para el nuevo usuario"
+$contra=Read-Host "Dime una contraseña para el nuevo usuario" -AsSecureString
+New-LocalUser $nombre -Password $contra
