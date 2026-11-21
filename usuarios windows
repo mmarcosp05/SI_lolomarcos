@@ -1,0 +1,13 @@
+Para crear un usuario en windows haremos
+Creamos la contraseña
+
+$Password = Read-Host "Introduce la contraseña" -AsSecureString
+
+Creamos el usuario
+Crea la cuenta de usuario local (por defecto será un usuario estándar) [0.6.4]:
+   ```powershell
+   New-LocalUser -Name "UsuarioEjemplo" -Password $Password -FullName "Usuario de Ejemplo" -Description "Cuenta creada con PowerShell"
+
+Si quisieramos crearlo con permisos especiales
+
+Add-LocalGroupMember -Group "Administradores" -Member "UsuarioEjemplo"
